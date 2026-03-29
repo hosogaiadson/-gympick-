@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ｜GYMPICK</title>
+<meta name="description" content="GYMPICKへのお問い合わせはこちらから。記事内容・掲載・広告に関するご連絡を受け付けています。">
+<link rel="canonical" href="#placeholder-url/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner"><a href="index.html" class="site-logo">GYM<span>PICK</span></a><button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button><nav class="site-nav" id="nav"><a href="index.html">ホーム</a><a href="after-work.html">仕事帰り</a><a href="postpartum.html">産後ダイエット</a><a href="wedding.html">結婚式</a><a href="effect.html">効果</a><a href="cost.html">費用</a><a href="about.html">運営者情報</a></nav></div></header>
+<div class="nav-overlay"></div>
+
+<div class="content" style="max-width:600px;padding-top:40px;">
+<h1 style="font-size:24px;font-weight:900;margin-bottom:16px;"><i class="fa-solid fa-envelope" style="color:var(--accent);margin-right:8px;"></i>お問い合わせ</h1>
+<p style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">当サイトへのお問い合わせは、以下のフォームよりお送りください。内容を確認の上、折り返しご連絡いたします。</p>
+
+<div class="contact-form">
+<div class="form-group">
+<label>お名前 <span style="color:var(--accent);">*</span></label>
+<input type="text" placeholder="山田 太郎" required>
+</div>
+<div class="form-group">
+<label>メールアドレス <span style="color:var(--accent);">*</span></label>
+<input type="email" placeholder="example@email.com" required>
+</div>
+<div class="form-group">
+<label>お問い合わせ種別</label>
+<select>
+<option>記事内容について</option>
+<option>掲載に関するお問い合わせ</option>
+<option>広告・提携について</option>
+<option>その他</option>
+</select>
+</div>
+<div class="form-group">
+<label>お問い合わせ内容 <span style="color:var(--accent);">*</span></label>
+<textarea placeholder="お問い合わせ内容をご記入ください" required></textarea>
+</div>
+<button class="submit-btn" type="button" onclick="alert('※現在フォーム送信機能は準備中です。お問い合わせはメールでお願いいたします。')"><i class="fa-solid fa-paper-plane" style="margin-right:6px;"></i>送信する</button>
+</div>
+</div>
+
+<footer class="site-footer"><div class="footer-links"><a href="about.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ</a></div><p>&copy; 2026 GYMPICK All rights reserved.</p></footer>
+
+<script>
+const hamburger=document.querySelector('.hamburger'),nav=document.getElementById('nav'),overlay=document.querySelector('.nav-overlay');
+function toggleNav(){hamburger.classList.toggle('open');nav.classList.toggle('open');overlay.classList.toggle('open');}
+hamburger.addEventListener('click',toggleNav);overlay.addEventListener('click',toggleNav);
+</script>
+</body>
+</html>
