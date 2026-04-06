@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://hosogaiadson.github.io/-gympick-/sitemap.xml
+Sitemap: https://gympick.jp/sitemap.xml
