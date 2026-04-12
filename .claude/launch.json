@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "gympick",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8889"],
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "8889", "/Users/naoto/Desktop/アドアフィ/サイトLPフィットネス"],
       "port": 8889
     }
   ]
