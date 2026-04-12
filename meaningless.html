@@ -2,6 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-406756934"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-406756934');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="-iENN8fGitzwyItCrx_IlRoV5sDQtup6yK9kuU9Ji-Y" />
 <title>パーソナルジムは意味ない？本音で検証｜効果が出ない人の共通点｜GYMPICK</title>
@@ -575,6 +583,20 @@ function toggleNav() {
 }
 hamburger.addEventListener('click', toggleNav);
 overlay.addEventListener('click', toggleNav);
+</script>
+<!-- Google Ads Conversion Event on Affiliate Link Click -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="moshimo.com"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-406756934/NoUjCKiV25ocEMa8-sEB',
+        'value': 1.0,
+        'currency': 'JPY'
+      });
+    });
+  });
+});
 </script>
 </body>
 </html>
