@@ -1044,14 +1044,15 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    Footer
    ============================================ */
-.site-footer {
+.site-footer,
+footer {
   background: #1A1A1A;
-  color: #999;
+  color: #B0B0B0;
   padding: 0;
   font-size: 13px;
 }
-.site-footer a { color: #CCC; transition: color 0.2s; }
-.site-footer a:hover { color: white; }
+.site-footer a, footer a { color: #E0E0E0; transition: color 0.2s; }
+.site-footer a:hover, footer a:hover { color: white; }
 .footer-inner {
   max-width: 800px;
   margin: 0 auto;
@@ -1232,6 +1233,10 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 /* Footer spacing to avoid sticky CTA overlap */
-.site-footer {
+.site-footer,
+footer {
+  padding-bottom: 80px;
+}
+body {
   padding-bottom: 80px;
 }
