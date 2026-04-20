@@ -1240,3 +1240,31 @@ footer {
 body {
   padding-bottom: 80px;
 }
+
+/* ============================================
+   Hero Image (記事上部のアイキャッチ)
+   ============================================ */
+.hero-image {
+  max-width: 800px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: block;
+}
+@media (max-width: 600px) {
+  .hero-image {
+    padding: 0 12px;
+    margin-top: 12px;
+  }
+  .hero-image img {
+    max-height: 240px;
+    border-radius: 8px;
+  }
+}
