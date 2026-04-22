@@ -1268,3 +1268,165 @@ body {
     border-radius: 8px;
   }
 }
+
+/* ============================================
+   店舗一覧ボックス
+   ============================================ */
+.store-list-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.store-list-box h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (max-width: 500px) {
+  .store-grid { grid-template-columns: 1fr; }
+}
+.store-item {
+  background: var(--bg);
+  border-left: 3px solid var(--pink);
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+.store-list-box.blue .store-item { border-left-color: var(--blue); }
+.store-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.store-access {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+/* ============================================
+   料金サマリー
+   ============================================ */
+.price-summary {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-top: 4px solid var(--pink);
+}
+.price-summary.blue { border-top-color: var(--blue); }
+.price-lead {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.price-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.price-bullets li {
+  font-size: 13px;
+  padding: 6px 0 6px 22px;
+  position: relative;
+  color: var(--text);
+  line-height: 1.7;
+}
+.price-bullets li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 900;
+}
+.price-table-mini {
+  border-top: 1px solid var(--border);
+}
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 1px solid #F5F5F0;
+  font-size: 13px;
+}
+.price-row:last-child { border-bottom: none; }
+.price-col-plan {
+  color: var(--text-sub);
+}
+.price-col-val {
+  color: var(--text);
+  font-size: 14px;
+}
+.price-col-val strong {
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 900;
+}
+.price-caption {
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* ============================================
+   Inline CTA
+   ============================================ */
+.cta-inline {
+  margin: 24px 0;
+  text-align: center;
+}
+.cta-inline .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+.cta-inline .cta-btn.primary {
+  background: var(--accent);
+}
+.cta-inline .cta-btn.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+.cta-inline .cta-btn.secondary {
+  background: var(--blue);
+}
+.cta-inline .cta-btn.secondary:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+}
+.cta-note {
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-top: 8px;
+}
+@media (max-width: 500px) {
+  .cta-inline .cta-btn {
+    padding: 14px 20px;
+    font-size: 13px;
+    width: 100%;
+  }
+}
