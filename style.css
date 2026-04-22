@@ -1589,3 +1589,100 @@ a.store-item .store-name i {
   text-align: right;
   margin-top: 10px;
 }
+
+/* ============================================
+   Conclusion items as links (トップページ2択)
+   ============================================ */
+.conclusion-item.as-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s;
+  cursor: pointer;
+  padding: 28px 20px 24px;
+}
+.conclusion-item.as-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.conclusion-cta {
+  margin-top: 14px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.conclusion-item.as-link:last-child .conclusion-cta {
+  background: var(--blue);
+}
+.conclusion-item.as-link:hover .conclusion-cta {
+  background: var(--accent-hover);
+}
+.conclusion-item.as-link:last-child:hover .conclusion-cta {
+  background: var(--blue-hover);
+}
+
+/* ============================================
+   LP Link Bar (詳細専用ページ誘導)
+   ============================================ */
+.lp-link-bar {
+  background: #FFF5F3;
+  border-left: 4px solid var(--pink);
+  padding: 18px 22px;
+  border-radius: 10px;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+}
+.lp-link-bar.blue {
+  background: #F0F6FF;
+  border-left-color: var(--blue);
+}
+.lp-link-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+}
+.lp-link-text i {
+  color: var(--pink);
+  margin-right: 4px;
+}
+.lp-link-bar.blue .lp-link-text i {
+  color: var(--blue);
+}
+.lp-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(190,24,93,0.25);
+  transition: all 0.2s;
+}
+.lp-link-btn.blue {
+  background: var(--blue);
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+}
+.lp-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(190,24,93,0.35);
+}
+.lp-link-btn.blue:hover {
+  box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+}
