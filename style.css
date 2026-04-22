@@ -1430,3 +1430,162 @@ body {
     width: 100%;
   }
 }
+
+/* ============================================
+   Hero CTA button
+   ============================================ */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.95);
+  color: var(--accent);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+}
+.hero-cta:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+@media (max-width: 500px) {
+  .hero-cta {
+    font-size: 12px;
+    padding: 12px 20px;
+  }
+}
+
+/* ============================================
+   悩み共感セクション
+   ============================================ */
+.pain-section {
+  background: #FFF5F3;
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.pain-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.pain-title {
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+.pain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (max-width: 600px) {
+  .pain-list { grid-template-columns: 1fr; }
+  .pain-title { font-size: 18px; }
+}
+.pain-list li {
+  background: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.pain-list li i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+.pain-bridge {
+  background: #fff;
+  border-left: 4px solid var(--accent);
+  padding: 18px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+.pain-bridge strong {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+/* ============================================
+   なぜこの2つ（Why）グリッド
+   ============================================ */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
+.why-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+}
+.why-num {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  opacity: 0.25;
+  font-family: Georgia, serif;
+}
+.why-item h4 {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.why-item p {
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.8;
+}
+.why-item p strong {
+  color: var(--text);
+}
+
+/* ============================================
+   店舗カードをリンク化
+   ============================================ */
+a.store-item {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.2s;
+}
+a.store-item:hover {
+  transform: translateX(3px);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+a.store-item .store-name i {
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-left: 6px;
+}
+.store-map-note {
+  font-size: 11px;
+  color: var(--text-sub);
+  text-align: right;
+  margin-top: 10px;
+}
