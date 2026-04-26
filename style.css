@@ -1683,6 +1683,26 @@ a.store-item .store-name i {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.1);
 }
+/* ============================================
+   ladys-page: 女性専用LPはピンクで統一
+   ============================================ */
+body.ladys-page .cta-btn,
+body.ladys-page .cta-btn.primary,
+body.ladys-page .cta-btn-sm.primary,
+body.ladys-page .cta-inline .cta-btn,
+body.ladys-page .cta-area .cta-btn,
+body.ladys-page .sticky-cta .cta-btn-sm {
+  background: var(--pink);
+}
+body.ladys-page .cta-btn:hover,
+body.ladys-page .cta-btn.primary:hover,
+body.ladys-page .cta-btn-sm.primary:hover,
+body.ladys-page .cta-inline .cta-btn:hover,
+body.ladys-page .cta-area .cta-btn:hover,
+body.ladys-page .sticky-cta .cta-btn-sm:hover {
+  background: #9D1751;
+}
+
 .conclusion-cta {
   margin-top: 14px;
   padding: 10px 20px;
