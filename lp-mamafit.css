@@ -131,10 +131,13 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
 .gp-voices-title { font-size: 24px; font-weight: 900; text-align: center; margin-bottom: 32px; color: var(--text); }
 .gp-voices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .gp-voice-card { background: #fff; border-radius: 14px; padding: 20px; display: flex; gap: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-.gp-voice-photo { width: 70px; height: 70px; border-radius: 50%; background-size: cover; background-position: center; flex-shrink: 0; }
-.gp-voice-photo.p1 { background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop'); }
-.gp-voice-photo.p2 { background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop'); }
-.gp-voice-photo.p3 { background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop'); }
+.gp-voice-photo { width: 70px; height: 70px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: 1px; font-family: 'Noto Sans JP', sans-serif; }
+.gp-voice-photo.p1 { background: linear-gradient(135deg, #ff7eb6 0%, #ff4081 100%); }
+.gp-voice-photo.p1::before { content: 'H.K'; }
+.gp-voice-photo.p2 { background: linear-gradient(135deg, #ffb6c1 0%, #ff8c9e 100%); }
+.gp-voice-photo.p2::before { content: 'M.T'; }
+.gp-voice-photo.p3 { background: linear-gradient(135deg, #ffd1dc 0%, #ff9eb5 100%); }
+.gp-voice-photo.p3::before { content: 'Y.S'; }
 .gp-voice-body { flex: 1; min-width: 0; }
 .gp-voice-headline { background: var(--pink-bg); color: var(--pink-dark); font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 6px; }
 .gp-voice-profile { font-size: 11px; color: var(--text-sub); margin-bottom: 8px; }
