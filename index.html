@@ -211,11 +211,16 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
 .gp-diag-result-label { font-size: 12px; color: var(--pink); font-weight: 900; text-align: center; letter-spacing: 1px; margin-bottom: 6px; }
 .gp-diag-result h3 { font-size: 18px; font-weight: 900; text-align: center; margin-bottom: 8px; }
 .gp-diag-result-summary { font-size: 12px; color: var(--text-sub); text-align: center; margin-bottom: 18px; line-height: 1.5; }
-.gp-diag-result-rec { background: var(--pink-bg); border-radius: 10px; padding: 16px; margin-bottom: 10px; }
-.gp-diag-result-rec .label { font-size: 10px; color: var(--pink-dark); font-weight: 900; letter-spacing: 1px; margin-bottom: 4px; }
-.gp-diag-result-rec .name { font-size: 15px; font-weight: 900; color: var(--text); margin-bottom: 4px; }
-.gp-diag-result-rec .desc { font-size: 11px; color: var(--text-sub); line-height: 1.5; margin-bottom: 10px; }
-.gp-diag-result-rec a { display: block; background: linear-gradient(135deg, #ff4081 0%, #f50057 100%); color: #fff; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 900; }
+.gp-diag-result-rec { background: linear-gradient(135deg, #fff8fa 0%, #fff5f0 100%); border: 2px solid var(--pink); border-radius: 14px; padding: 20px 18px; margin-bottom: 12px; }
+.gp-diag-result-rec .label { font-size: 11px; color: var(--pink-dark); font-weight: 900; letter-spacing: 1px; margin-bottom: 6px; }
+.gp-diag-result-rec .name { font-size: 17px; font-weight: 900; color: var(--text); margin-bottom: 8px; }
+.gp-diag-result-rec .desc { font-size: 12px; color: var(--text-sub); line-height: 1.6; margin-bottom: 14px; }
+.gp-diag-result-rec a { display: flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, #ff4081 0%, #f50057 100%); color: #fff; text-align: center; padding: 18px 16px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 900; box-shadow: 0 8px 20px rgba(245,0,87,0.35); transition: transform 0.15s, box-shadow 0.15s; animation: gp-pulse-btn 2s infinite; }
+.gp-diag-result-rec a:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(245,0,87,0.45); }
+.gp-diag-result-rec a .arrow { display: inline-block; transition: transform 0.2s; }
+.gp-diag-result-rec a:hover .arrow { transform: translateX(4px); }
+.gp-diag-result-rec .note { font-size: 10px; color: var(--text-sub); text-align: center; margin-top: 8px; }
+@keyframes gp-pulse-btn { 0%, 100% { box-shadow: 0 8px 20px rgba(245,0,87,0.35); } 50% { box-shadow: 0 8px 28px rgba(245,0,87,0.55); } }
 .gp-restart { display: block; width: 100%; background: none; border: none; color: var(--text-sub); font-size: 11px; text-decoration: underline; cursor: pointer; margin-top: 8px; padding: 6px; font-family: inherit; }
 
 /* ============ MOBILE ============ */
@@ -382,13 +387,14 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
       <p class="gp-diag-result-summary" id="result-summary">読み込み中...</p>
 
       <div class="gp-diag-result-rec">
-        <div class="label">推奨No.1</div>
+        <div class="label">★ 推奨No.1</div>
         <div class="name" id="result-name">-</div>
         <div class="desc" id="result-desc">-</div>
-        <a href="#" id="result-link" data-affiliate="diag">公式で料金・店舗を確認する →</a>
+        <a href="#" id="result-link" data-affiliate="diag" target="_blank" rel="nofollow noopener sponsored">公式サイトで詳しく見る<span class="arrow">→</span></a>
+        <div class="note">※公式サイトが新しいタブで開きます</div>
       </div>
 
-      <a href="#ranking" style="display:block;text-align:center;font-size:12px;color:#666;text-decoration:underline;padding:8px;">↓ ランキング3社を見る</a>
+      <a href="#ranking" style="display:block;text-align:center;font-size:13px;color:#666;text-decoration:underline;padding:10px;">↓ ランキング3社をすべて見る</a>
       <button class="gp-restart" onclick="restartDiag()">↻ もう一度診断する</button>
     </div>
     </div>
@@ -699,6 +705,11 @@ function showResult() {
   if (typeof gtag !== 'undefined') {
     gtag('event', 'diagnostic_complete', diagState);
   }
+
+  // 結果カードに自動スクロール
+  setTimeout(function() {
+    document.getElementById('diag-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 100);
 }
 
 function restartDiag() {
