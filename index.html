@@ -113,26 +113,295 @@
 </header>
 <div class="nav-overlay"></div>
 
-<div class="hero">
-  <span class="hero-badge">2026年最新版｜大阪エリア特化</span>
-  <h1>大阪で失敗しない<br>パーソナルジムは<em>この2択</em></h1>
-  <p class="hero-sub">梅田・天満橋・江坂・豊中・高槻など大阪10店舗から、女性専用 or 男女OKを選ぶだけ。</p>
-  <div class="hero-meta">
-    <span>更新日：2026年4月</span>
-    <span>監修：GYMPICK編集部</span>
+<!-- =================== 30秒診断ヒーロー =================== -->
+<style>
+.diag-hero { background: linear-gradient(135deg, #fdf2f8 0%, #fff5f0 50%, #ffe8e8 100%); padding: 48px 20px 56px; position: relative; overflow: hidden; }
+.diag-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80&auto=format&fit=crop') center/cover; opacity: 0.12; border-radius: 50%; filter: blur(3px); }
+.diag-hero-inner { position: relative; max-width: 720px; margin: 0 auto; z-index: 2; }
+.diag-hero-badge { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #d63384; padding: 8px 16px; border-radius: 999px; font-size: 12px; font-weight: 800; box-shadow: 0 4px 12px rgba(255,107,157,0.2); margin-bottom: 18px; }
+.diag-hero-h1 { font-size: 32px; font-weight: 900; line-height: 1.35; color: #1a1a1a; margin-bottom: 12px; letter-spacing: -0.5px; text-align: center; }
+.diag-hero-h1 .accent { color: #e91e63; }
+.diag-hero-sub { font-size: 14px; color: #666; text-align: center; margin-bottom: 28px; line-height: 1.7; }
+.diag-progress { display: flex; gap: 6px; justify-content: center; margin-bottom: 20px; }
+.diag-progress-dot { width: 32px; height: 4px; background: #ffd9e0; border-radius: 2px; transition: background 0.3s; }
+.diag-progress-dot.active { background: #ff4081; }
+.diag-question { background: #fff; border-radius: 16px; padding: 28px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+.diag-question-num { font-size: 12px; color: #d63384; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; text-align: center; }
+.diag-question-text { font-size: 20px; font-weight: 900; color: #1a1a1a; margin-bottom: 22px; text-align: center; }
+.diag-options { display: grid; gap: 10px; }
+.diag-options.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.diag-options.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.diag-option { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 12px; background: #fff; border: 2px solid #ffe0ea; border-radius: 12px; cursor: pointer; transition: all 0.15s; text-align: center; }
+.diag-option:hover { border-color: #ff4081; background: #fff8fa; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,64,129,0.15); }
+.diag-option i { font-size: 28px; color: #ff4081; }
+.diag-option .opt-label { font-size: 14px; font-weight: 800; color: #1a1a1a; }
+.diag-option .opt-desc { font-size: 11px; color: #888; line-height: 1.4; }
+.diag-result { background: #fff; border-radius: 16px; padding: 32px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+.diag-result-label { font-size: 12px; color: #d63384; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; text-align: center; }
+.diag-result-h2 { font-size: 24px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; text-align: center; }
+.diag-result-sub { font-size: 13px; color: #666; text-align: center; margin-bottom: 24px; line-height: 1.6; }
+.diag-result-card { background: linear-gradient(135deg, #fff 0%, #fff8fa 100%); border: 1px solid #ffe0ea; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.diag-result-card .card-label { font-size: 11px; color: #d63384; font-weight: 800; margin-bottom: 4px; }
+.diag-result-card .card-title { font-size: 17px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
+.diag-result-card .card-desc { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 14px; }
+.diag-result-btn { display: block; background: linear-gradient(135deg, #ff4081 0%, #f50057 100%); color: #fff; text-decoration: none; text-align: center; padding: 16px 20px; border-radius: 12px; font-size: 15px; font-weight: 900; box-shadow: 0 6px 18px rgba(245,0,87,0.3); transition: transform 0.15s; }
+.diag-result-btn:hover { transform: translateY(-2px); }
+.diag-result-btn .arrow { display: inline-block; margin-left: 6px; }
+.diag-restart { display: block; text-align: center; margin-top: 16px; font-size: 12px; color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; width: 100%; padding: 8px; }
+.diag-scroll-link { display: block; text-align: center; margin-top: 24px; font-size: 13px; color: #888; text-decoration: none; }
+
+@media (max-width: 640px) {
+  .diag-hero-h1 { font-size: 24px; }
+  .diag-question-text { font-size: 17px; }
+  .diag-options.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .diag-option { padding: 16px 10px; }
+}
+</style>
+
+<section class="diag-hero">
+  <div class="diag-hero-inner">
+    <div style="text-align:center;"><span class="diag-hero-badge">⚡ 30秒で結果が出ます</span></div>
+    <h1 class="diag-hero-h1">3問で、<span class="accent">あなたに合う大阪のジム</span>がわかる</h1>
+    <p class="diag-hero-sub">梅田・天満橋・江坂など大阪10店舗から、目的とエリアで絞り込み<br>診断結果をベースに公式店舗の詳細を確認できます</p>
+
+    <div class="diag-progress">
+      <div class="diag-progress-dot active" id="dot-1"></div>
+      <div class="diag-progress-dot" id="dot-2"></div>
+      <div class="diag-progress-dot" id="dot-3"></div>
+    </div>
+
+    <!-- Q1: 性別 -->
+    <div class="diag-question" id="q-1">
+      <div class="diag-question-num">QUESTION 1 / 3</div>
+      <div class="diag-question-text">あなたの性別は？</div>
+      <div class="diag-options cols-2">
+        <div class="diag-option" data-q="1" data-val="female">
+          <i class="fa-solid fa-venus"></i>
+          <div class="opt-label">女性</div>
+          <div class="opt-desc">女性専用ジムも検討OK</div>
+        </div>
+        <div class="diag-option" data-q="1" data-val="male">
+          <i class="fa-solid fa-mars"></i>
+          <div class="opt-label">男性</div>
+          <div class="opt-desc">男女OKジムから選ぶ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2: 目的 -->
+    <div class="diag-question" id="q-2" style="display:none;">
+      <div class="diag-question-num">QUESTION 2 / 3</div>
+      <div class="diag-question-text">通う目的は？</div>
+      <div class="diag-options cols-3">
+        <div class="diag-option" data-q="2" data-val="after-work">
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="opt-label">仕事帰り</div>
+          <div class="opt-desc">残業多い・社会人</div>
+        </div>
+        <div class="diag-option" data-q="2" data-val="wedding">
+          <i class="fa-solid fa-ring"></i>
+          <div class="opt-label">結婚式準備</div>
+          <div class="opt-desc">プレ花嫁・写真映え</div>
+        </div>
+        <div class="diag-option" data-q="2" data-val="postpartum">
+          <i class="fa-solid fa-baby"></i>
+          <div class="opt-label">産後ダイエット</div>
+          <div class="opt-desc">骨盤・お腹戻し</div>
+        </div>
+        <div class="diag-option" data-q="2" data-val="effect">
+          <i class="fa-solid fa-fire"></i>
+          <div class="opt-label">効果重視</div>
+          <div class="opt-desc">3ヶ月で本気で変わる</div>
+        </div>
+        <div class="diag-option" data-q="2" data-val="cost">
+          <i class="fa-solid fa-yen-sign"></i>
+          <div class="opt-label">費用重視</div>
+          <div class="opt-desc">安く続けたい</div>
+        </div>
+        <div class="diag-option" data-q="2" data-val="general">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="opt-label">まだ決めてない</div>
+          <div class="opt-desc">とりあえず比較</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3: エリア -->
+    <div class="diag-question" id="q-3" style="display:none;">
+      <div class="diag-question-num">QUESTION 3 / 3</div>
+      <div class="diag-question-text">通えるエリアは？</div>
+      <div class="diag-options cols-3">
+        <div class="diag-option" data-q="3" data-val="umeda"><i class="fa-solid fa-train-subway"></i><div class="opt-label">梅田</div></div>
+        <div class="diag-option" data-q="3" data-val="kitahama"><i class="fa-solid fa-train-subway"></i><div class="opt-label">北浜</div></div>
+        <div class="diag-option" data-q="3" data-val="fukushima"><i class="fa-solid fa-train-subway"></i><div class="opt-label">福島</div></div>
+        <div class="diag-option" data-q="3" data-val="esaka"><i class="fa-solid fa-train-subway"></i><div class="opt-label">江坂</div></div>
+        <div class="diag-option" data-q="3" data-val="temmabashi"><i class="fa-solid fa-train-subway"></i><div class="opt-label">天満橋</div></div>
+        <div class="diag-option" data-q="3" data-val="minamimorimachi"><i class="fa-solid fa-train-subway"></i><div class="opt-label">南森町</div></div>
+        <div class="diag-option" data-q="3" data-val="toyonaka"><i class="fa-solid fa-train-subway"></i><div class="opt-label">豊中</div></div>
+        <div class="diag-option" data-q="3" data-val="takatsuki"><i class="fa-solid fa-train-subway"></i><div class="opt-label">高槻</div></div>
+        <div class="diag-option" data-q="3" data-val="any"><i class="fa-solid fa-globe"></i><div class="opt-label">どこでもOK</div></div>
+      </div>
+    </div>
+
+    <!-- 結果 -->
+    <div class="diag-result" id="diag-result" style="display:none;">
+      <div class="diag-result-label">✨ 診断結果</div>
+      <h2 class="diag-result-h2" id="result-title">あなたにおすすめは...</h2>
+      <p class="diag-result-sub" id="result-sub">読み込み中...</p>
+
+      <div class="diag-result-card">
+        <div class="card-label" id="result-card-label">推奨記事</div>
+        <div class="card-title" id="result-card-title">-</div>
+        <div class="card-desc" id="result-card-desc">-</div>
+        <a href="#" id="result-detail-btn" class="diag-result-btn">該当ガイドを読む<span class="arrow">→</span></a>
+      </div>
+
+      <div class="diag-result-card">
+        <div class="card-label">公式情報を見る</div>
+        <div class="card-title" id="result-gym-name">-</div>
+        <div class="card-desc" id="result-gym-desc">-</div>
+        <a href="#" id="result-official-btn" class="diag-result-btn" data-affiliate="diag">公式で料金・店舗を確認する<span class="arrow">→</span></a>
+      </div>
+
+      <button class="diag-restart" onclick="restartDiag()">↻ もう一度診断する</button>
+    </div>
+
+    <a href="#conclusion" class="diag-scroll-link">↓ 診断せずに比較表だけ見る</a>
   </div>
-  <div class="hero-cta-group">
-    <a href="ladys.html" class="hero-cta-btn pink">
-      <i class="fa-solid fa-heart"></i> 女性専用 fis.lady's
-      <span class="hero-cta-sub">完全個室・初回体験¥3,000</span>
-    </a>
-    <a href="fis-osaka.html" class="hero-cta-btn blue">
-      <i class="fa-solid fa-dumbbell"></i> 男女OK パーソナルジムfis
-      <span class="hero-cta-sub">月2回¥16,400〜・無料カウンセリング</span>
-    </a>
-  </div>
-  <a href="#conclusion" class="hero-scroll-link">↓ まずは比較で全体を見る</a>
-</div>
+</section>
+
+<script>
+const diagState = { gender: null, purpose: null, area: null };
+
+const RESULT_MAP = {
+  // [gender, purpose, area] => { article, title, desc, gym, gymDesc, gymLink }
+  default: {
+    article: 'index.html#comparison', title: '大阪パーソナルジム2選比較表',
+    desc: '女性専用 fis.lady\'s と 男女OK パーソナルジムfis の比較表で全体把握',
+    gym: 'パーソナルジムfis（大阪6店舗）',
+    gymDesc: '梅田・北浜・福島・江坂・豊中・高槻。男女OK・無料カウンセリング',
+    gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482010&p_id=3153&pc_id=7353&pl_id=59052'
+  }
+};
+
+function getResult(gender, purpose, area) {
+  // 駅×目的の固有LP
+  if (area === 'umeda' && purpose === 'after-work') {
+    return {
+      article: 'umeda-after-work.html', title: '梅田で仕事帰りに通えるパーソナルジム',
+      desc: 'HEPナビオ徒歩5分・21時以降OK・残業多い社会人向け完全ガイド',
+      gym: 'パーソナルジムfis 梅田店', gymDesc: 'HEPナビオ徒歩5分・朝7時〜22時・男女OK',
+      gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482010&p_id=3153&pc_id=7353&pl_id=59052'
+    };
+  }
+
+  // 目的別の主要LP
+  if (purpose === 'wedding') {
+    const isLadys = gender === 'female';
+    return {
+      article: 'wedding.html', title: '大阪で結婚式ダイエット 逆算スケジュール',
+      desc: 'プレ花嫁向け・3〜6ヶ月前から逆算で二の腕・背中を仕上げるガイド',
+      gym: isLadys ? 'fis.lady\'s（女性専用4店舗）' : 'パーソナルジムfis（大阪6店舗）',
+      gymDesc: isLadys ? '天満橋・南森町・江坂・高槻。完全個室・女性専用' : '梅田・北浜・福島・江坂・豊中・高槻。男女OK',
+      gymLink: isLadys
+        ? 'https://af.moshimo.com/af/c/click?a_id=5482009&p_id=3563&pc_id=8594&pl_id=50172'
+        : 'https://af.moshimo.com/af/c/click?a_id=5482010&p_id=3153&pc_id=7353&pl_id=59052'
+    };
+  }
+  if (purpose === 'postpartum') {
+    return {
+      article: 'postpartum.html', title: '大阪で産後ダイエット',
+      desc: '骨盤・お腹を整える女性専用ジム。授乳中OK・帝王切開後ケアあり',
+      gym: 'fis.lady\'s（女性専用4店舗）', gymDesc: '天満橋・南森町・江坂・高槻。完全個室・女性専用',
+      gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482009&p_id=3563&pc_id=8594&pl_id=50172'
+    };
+  }
+  if (purpose === 'after-work') {
+    return {
+      article: 'after-work.html', title: '大阪で仕事帰りに通えるパーソナルジム',
+      desc: '残業多い社会人向け・21時以降OK・続けられる仕組みのジム選び',
+      gym: 'パーソナルジムfis（大阪6店舗）',
+      gymDesc: '梅田・北浜・福島・江坂・豊中・高槻。朝7時〜22時・完全予約制',
+      gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482010&p_id=3153&pc_id=7353&pl_id=59052'
+    };
+  }
+  if (purpose === 'effect') {
+    return {
+      article: 'effect.html', title: 'パーソナルジムの効果はいつから？',
+      desc: '期間別の実績データ・1ヶ月/3ヶ月/6ヶ月の変化目安を公開',
+      gym: 'パーソナルジムfis（大阪6店舗）',
+      gymDesc: '個人別カスタムメニュー・期間別目標設定。効果を最大化',
+      gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482010&p_id=3153&pc_id=7353&pl_id=59052'
+    };
+  }
+  if (purpose === 'cost') {
+    return {
+      article: 'cost.html', title: '大阪パーソナルジムの費用相場',
+      desc: '料金体系の比較と、無理なく続けられる料金プランの選び方',
+      gym: 'パーソナルジムfis（大阪6店舗）',
+      gymDesc: '月2回¥16,400〜・月8回¥48,000〜。明朗会計で続けやすい',
+      gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482010&p_id=3153&pc_id=7353&pl_id=59052'
+    };
+  }
+
+  // 女性で未決定
+  if (gender === 'female') {
+    return {
+      article: 'ladys.html', title: 'fis.lady\'s 大阪4店舗の女性専用パーソナルジム',
+      desc: '完全個室・女性専用。プレ花嫁・産後・働く女性すべて対応',
+      gym: 'fis.lady\'s（女性専用4店舗）', gymDesc: '天満橋・南森町・江坂・高槻',
+      gymLink: 'https://af.moshimo.com/af/c/click?a_id=5482009&p_id=3563&pc_id=8594&pl_id=50172'
+    };
+  }
+  // デフォルト（男性・未決定）
+  return RESULT_MAP.default;
+}
+
+document.querySelectorAll('.diag-option').forEach(opt => {
+  opt.addEventListener('click', function() {
+    const q = this.dataset.q;
+    const val = this.dataset.val;
+    if (q === '1') { diagState.gender = val; showQuestion(2); }
+    else if (q === '2') { diagState.purpose = val; showQuestion(3); }
+    else if (q === '3') { diagState.area = val; showResult(); }
+  });
+});
+
+function showQuestion(n) {
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('q-' + i).style.display = i === n ? 'block' : 'none';
+    document.getElementById('dot-' + i).classList.toggle('active', i <= n);
+  }
+  document.getElementById('diag-result').style.display = 'none';
+}
+
+function showResult() {
+  ['q-1','q-2','q-3'].forEach(id => document.getElementById(id).style.display = 'none');
+  for (let i = 1; i <= 3; i++) document.getElementById('dot-' + i).classList.add('active');
+  const r = getResult(diagState.gender, diagState.purpose, diagState.area);
+  const AREA_JA = { umeda: '梅田', kitahama: '北浜', fukushima: '福島', esaka: '江坂', temmabashi: '天満橋', minamimorimachi: '南森町', toyonaka: '豊中', takatsuki: '高槻', any: 'エリア問わず' };
+  const PURPOSE_JA = { 'after-work': '仕事帰り', wedding: '結婚式準備', postpartum: '産後ダイエット', effect: '効果重視', cost: '費用重視', general: '一般' };
+  const areaLabel = diagState.area === 'any' ? '通えるエリア問わず' : (AREA_JA[diagState.area] || diagState.area) + 'エリア';
+  document.getElementById('result-title').textContent = 'あなたへのおすすめはこちら';
+  document.getElementById('result-sub').textContent = areaLabel + '・' + (PURPOSE_JA[diagState.purpose] || diagState.purpose) + 'に最適なジム';
+  document.getElementById('result-card-title').textContent = r.title;
+  document.getElementById('result-card-desc').textContent = r.desc;
+  document.getElementById('result-detail-btn').href = r.article;
+  document.getElementById('result-gym-name').textContent = r.gym;
+  document.getElementById('result-gym-desc').textContent = r.gymDesc;
+  document.getElementById('result-official-btn').href = r.gymLink;
+  document.getElementById('diag-result').style.display = 'block';
+  // GA4 event
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'diagnostic_complete', { gender: diagState.gender, purpose: diagState.purpose, area: diagState.area });
+  }
+}
+
+function restartDiag() {
+  diagState.gender = null; diagState.purpose = null; diagState.area = null;
+  showQuestion(1);
+}
+</script>
 
 <!-- 悩み共感 -->
 <div class="pain-section">
