@@ -1,0 +1,113 @@
+/* ============================================
+   GYMPICK PPC型LP 共通スタイル
+   wedding.html / postpartum.html / after-work.html
+   等のLPで共有
+   ============================================ */
+
+/* === ファーストビュー === */
+.lp-hero { position: relative; min-height: 580px; background: linear-gradient(135deg, #fdf2f8 0%, #fff5f0 50%, #ffe8e8 100%); overflow: hidden; padding: 32px 20px 48px; }
+.lp-hero::before { content: ''; position: absolute; top: 0; right: -120px; width: 600px; height: 600px; background-size: cover; background-position: center; opacity: 0.18; border-radius: 50%; filter: blur(2px); }
+.lp-hero.theme-wedding::before { background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80&auto=format&fit=crop'); }
+.lp-hero.theme-postpartum::before { background-image: url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=900&q=80&auto=format&fit=crop'); }
+.lp-hero.theme-afterwork::before { background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=80&auto=format&fit=crop'); }
+.lp-hero.theme-effect::before { background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80&auto=format&fit=crop'); }
+.lp-hero.theme-cost::before { background-image: url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=900&q=80&auto=format&fit=crop'); }
+
+.lp-hero-inner { position: relative; max-width: 820px; margin: 0 auto; z-index: 2; }
+.lp-target-badge { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, #ff6b9d 0%, #ff8e8e 100%); color: #fff; padding: 8px 16px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(255,107,157,0.3); }
+.lp-h1 { font-size: 34px; font-weight: 900; line-height: 1.35; color: #1a1a1a; margin-bottom: 14px; letter-spacing: -0.5px; }
+.lp-h1 .accent { color: #e91e63; position: relative; display: inline-block; }
+.lp-h1 .accent::after { content: ''; position: absolute; bottom: 2px; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, #ffd9e0 0%, #ffeaea 100%); z-index: -1; }
+.lp-sub { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 28px; font-weight: 500; }
+.lp-cta-main { display: block; background: linear-gradient(135deg, #ff4081 0%, #f50057 100%); color: #fff; text-decoration: none; text-align: center; padding: 22px 24px; border-radius: 16px; font-size: 19px; font-weight: 900; box-shadow: 0 8px 24px rgba(245,0,87,0.35); transition: transform 0.15s, box-shadow 0.15s; margin-bottom: 14px; position: relative; }
+.lp-cta-main:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(245,0,87,0.45); }
+.lp-cta-main .icon { display: inline-block; margin-right: 8px; }
+.lp-cta-main .arrow { display: inline-block; margin-left: 8px; transition: transform 0.15s; }
+.lp-cta-main:hover .arrow { transform: translateX(4px); }
+.lp-cta-main .sub-text { display: block; font-size: 12px; font-weight: 600; margin-top: 6px; opacity: 0.95; }
+.lp-hurdle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+.lp-hurdle-item { background: rgba(255,255,255,0.85); border: 1px solid #ffd9e0; border-radius: 10px; padding: 10px 6px; text-align: center; font-size: 11px; font-weight: 700; color: #d63384; }
+.lp-hurdle-item i { display: block; font-size: 16px; margin-bottom: 4px; color: #e91e63; }
+.lp-proof { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.7); border-radius: 12px; padding: 12px 16px; font-size: 13px; color: #444; font-weight: 600; }
+.lp-proof .live-dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; box-shadow: 0 0 0 4px rgba(76,175,80,0.2); animation: lp-pulse 1.5s infinite; flex-shrink: 0; }
+.lp-proof strong { color: #e91e63; font-weight: 900; }
+@keyframes lp-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* === ビフォーアフター === */
+.lp-evidence { padding: 48px 20px; background: #fff; }
+.lp-evidence-inner { max-width: 820px; margin: 0 auto; }
+.lp-section-title { font-size: 24px; font-weight: 900; text-align: center; margin-bottom: 8px; color: #1a1a1a; }
+.lp-section-sub { text-align: center; font-size: 13px; color: #888; margin-bottom: 28px; }
+.lp-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.lp-result-card { background: linear-gradient(135deg, #fff 0%, #fff8fa 100%); border: 1px solid #ffe0ea; border-radius: 14px; padding: 20px 14px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+.lp-result-card .age { font-size: 11px; color: #888; font-weight: 700; margin-bottom: 6px; }
+.lp-result-card .delta { font-size: 28px; font-weight: 900; color: #e91e63; line-height: 1; margin-bottom: 4px; }
+.lp-result-card .period { font-size: 11px; color: #aaa; margin-bottom: 8px; }
+.lp-result-card .voice { font-size: 12px; color: #555; line-height: 1.5; font-style: italic; }
+
+/* === 共感セクション === */
+.lp-pain { padding: 48px 20px; background: linear-gradient(180deg, #fff 0%, #fafafa 100%); }
+.lp-pain-inner { max-width: 820px; margin: 0 auto; }
+.lp-pain-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.lp-pain-item { background: #fff; border: 1px solid #ffe0ea; border-left: 4px solid #ff4081; border-radius: 10px; padding: 16px 18px; font-size: 14px; font-weight: 600; color: #333; display: flex; align-items: center; gap: 10px; }
+.lp-pain-item::before { content: '😢'; font-size: 18px; flex-shrink: 0; }
+
+/* === 解決提示 === */
+.lp-solution { padding: 48px 20px; background: linear-gradient(135deg, #ff4081 0%, #f50057 100%); color: #fff; }
+.lp-solution-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+.lp-solution h2 { font-size: 26px; font-weight: 900; margin-bottom: 24px; color: #fff; }
+.lp-solution-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 28px; text-align: left; }
+.lp-solution-point { background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 18px 16px; }
+.lp-solution-point i { font-size: 22px; margin-bottom: 8px; display: block; }
+.lp-solution-point h3 { font-size: 15px; font-weight: 800; margin-bottom: 4px; color: #fff; }
+.lp-solution-point p { font-size: 12px; line-height: 1.55; opacity: 0.95; margin: 0; }
+.lp-cta-light { display: inline-block; background: #fff; color: #f50057; text-decoration: none; padding: 18px 36px; border-radius: 12px; font-size: 17px; font-weight: 900; box-shadow: 0 8px 24px rgba(0,0,0,0.2); transition: transform 0.15s; }
+.lp-cta-light:hover { transform: translateY(-2px); }
+
+/* === 料金 === */
+.lp-price { padding: 48px 20px; background: #fff; }
+.lp-price-inner { max-width: 820px; margin: 0 auto; }
+.lp-price-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.lp-price-card { border: 2px solid #ffe0ea; border-radius: 16px; padding: 24px 20px; position: relative; background: #fff; }
+.lp-price-card.featured { border-color: #ff4081; box-shadow: 0 8px 24px rgba(255,64,129,0.18); }
+.lp-price-card.featured::before { content: 'おすすめ'; position: absolute; top: -12px; left: 20px; background: #ff4081; color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 800; }
+.lp-price-card .gym-name { font-size: 18px; font-weight: 900; margin-bottom: 4px; color: #1a1a1a; }
+.lp-price-card .gym-tag { font-size: 11px; color: #888; margin-bottom: 14px; }
+.lp-price-card .price-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
+.lp-price-card .price-row:last-child { border-bottom: none; }
+.lp-price-card .price-row .label { color: #666; }
+.lp-price-card .price-row .value { font-weight: 800; color: #1a1a1a; }
+.lp-price-card .price-row .value.highlight { color: #e91e63; }
+
+/* === 流れ === */
+.lp-flow { padding: 48px 20px; background: #fafafa; }
+.lp-flow-inner { max-width: 820px; margin: 0 auto; }
+.lp-flow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; position: relative; }
+.lp-flow-step { background: #fff; border-radius: 12px; padding: 18px 12px; text-align: center; border: 1px solid #eee; }
+.lp-flow-step .num { width: 32px; height: 32px; border-radius: 50%; background: #ff4081; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; margin: 0 auto 10px; }
+.lp-flow-step h3 { font-size: 13px; font-weight: 800; margin-bottom: 4px; color: #1a1a1a; }
+.lp-flow-step p { font-size: 11px; color: #888; line-height: 1.5; margin: 0; }
+
+/* === 最終CTA === */
+.lp-final-cta { padding: 56px 20px; background: linear-gradient(135deg, #ff4081 0%, #f50057 100%); color: #fff; text-align: center; }
+.lp-final-cta-inner { max-width: 720px; margin: 0 auto; }
+.lp-final-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+.lp-final-cta p { font-size: 14px; margin-bottom: 28px; opacity: 0.95; line-height: 1.7; }
+.lp-final-cta .limited-bonus { background: rgba(255,255,255,0.15); border: 1px dashed rgba(255,255,255,0.5); border-radius: 12px; padding: 14px; margin-bottom: 24px; font-size: 13px; font-weight: 700; }
+.lp-final-cta .limited-bonus strong { display: block; font-size: 16px; margin-bottom: 4px; }
+
+/* === モバイル対応 === */
+@media (max-width: 640px) {
+  .lp-hero { padding: 24px 16px 32px; min-height: 540px; }
+  .lp-h1 { font-size: 26px; }
+  .lp-sub { font-size: 14px; }
+  .lp-cta-main { padding: 18px 16px; font-size: 16px; }
+  .lp-hurdle { grid-template-columns: repeat(2, 1fr); }
+  .lp-results { grid-template-columns: 1fr; }
+  .lp-pain-list { grid-template-columns: 1fr; }
+  .lp-solution-points { grid-template-columns: 1fr; }
+  .lp-price-cards { grid-template-columns: 1fr; }
+  .lp-flow-steps { grid-template-columns: repeat(2, 1fr); }
+  .lp-section-title { font-size: 20px; }
+  .lp-final-cta h2 { font-size: 22px; }
+}
