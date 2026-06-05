@@ -212,5 +212,6 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
   body { padding-bottom: 0; }
   .gp-header-cta .sub { display: none; }
   .gp-header-cta { padding: 8px 14px; }
+  .gp-hamburger { display: none; }
   .gp-pain-title, .gp-rank-title, .gp-voices-title, .gp-faq-title { font-size: 20px; }
 }
