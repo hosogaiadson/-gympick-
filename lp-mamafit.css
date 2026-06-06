@@ -73,7 +73,9 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
 .gp-pain-inner { max-width: 1100px; margin: 0 auto; }
 .gp-pain-title { font-size: 26px; font-weight: 900; text-align: center; margin-bottom: 32px; color: var(--text); }
 .gp-pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
-.gp-pain-image { background-image: url('https://images.unsplash.com/photo-1611042553365-9b101441c135?w=600&q=80&auto=format&fit=crop') !important; background-position: center !important; background-size: cover !important; border-radius: 16px; min-height: 280px; }
+.gp-pain-image { background: linear-gradient(135deg, #ffd1dc 0%, #ff6b9d 60%, #f50057 100%) !important; background-image: none !important; border-radius: 16px; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; position: relative; padding: 32px 24px; text-align: center; box-shadow: 0 8px 24px rgba(245,0,87,0.2); }
+.gp-pain-image::before { content: '94.5%'; font-size: 80px; font-weight: 900; line-height: 1; margin-bottom: 8px; letter-spacing: -2px; text-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.gp-pain-image::after { content: 'のお悩みが、ジムで解消できました'; font-size: 14px; font-weight: 700; line-height: 1.6; max-width: 280px; opacity: 0.95; }
 .gp-pain-list { background: var(--pink-bg); border-radius: 16px; padding: 28px 24px; }
 .gp-pain-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--pink-light); font-size: 14px; color: var(--text); font-weight: 600; }
 .gp-pain-item:last-child { border-bottom: none; }
