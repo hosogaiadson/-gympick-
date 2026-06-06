@@ -73,9 +73,7 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
 .gp-pain-inner { max-width: 1100px; margin: 0 auto; }
 .gp-pain-title { font-size: 26px; font-weight: 900; text-align: center; margin-bottom: 32px; color: var(--text); }
 .gp-pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
-.gp-pain-image { background: linear-gradient(135deg, #fff8fa 0%, #ffe0ea 50%, #ffd1dc 100%) !important; background-image: none !important; border-radius: 16px; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 24px; }
-.gp-pain-image::before { content: '🤔'; font-size: 96px; line-height: 1; margin-bottom: 8px; }
-.gp-pain-image::after { content: '考えすぎてませんか？'; font-size: 14px; font-weight: 800; color: var(--pink-dark); }
+.gp-pain-image { background-image: url('https://images.unsplash.com/photo-1611042553365-9b101441c135?w=600&q=80&auto=format&fit=crop') !important; background-position: center !important; background-size: cover !important; border-radius: 16px; min-height: 280px; }
 .gp-pain-list { background: var(--pink-bg); border-radius: 16px; padding: 28px 24px; }
 .gp-pain-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--pink-light); font-size: 14px; color: var(--text); font-weight: 600; }
 .gp-pain-item:last-child { border-bottom: none; }
