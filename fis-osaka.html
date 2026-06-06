@@ -202,7 +202,7 @@
     <div class="gp-pain-cta-box">
       <h3>そのお悩み、無料診断で解決できます！</h3>
       <p>5問の質問に答えるだけで、最適なfis店舗を提案します。</p>
-      <a href="#" class="gp-pain-cta-btn" onclick="event.preventDefault(); showInlineDiag(this);">無料診断をはじめる →</a>
+      <a href="#diag" class="gp-pain-cta-btn">無料診断をはじめる →</a>
     </div>
   </div>
 </section>
@@ -438,27 +438,6 @@ document.addEventListener('click', function(e) {
     });
   }
 }, true);
-
-function showInlineDiag(btn) {
-  const diagCard = document.getElementById('diag-card');
-  if (!diagCard) return;
-  const ctaBox = btn.closest('.gp-pain-cta-box');
-  if (!ctaBox) return;
-  // ボタン位置（ユーザーが見てる場所）の絶対位置を記録
-  const btnRect = btn.getBoundingClientRect();
-  const btnAbsTop = window.scrollY + btnRect.top;
-  // CTAボックスの中身を入れ替えて診断カード設置
-  ctaBox.innerHTML = '';
-  ctaBox.appendChild(diagCard);
-  diagCard.style.display = 'block';
-  // スクロール位置調整：CTAボックスの新しい位置を、元のボタンと同じ画面位置にする
-  requestAnimationFrame(function() {
-    const newRect = ctaBox.getBoundingClientRect();
-    const newAbsTop = window.scrollY + newRect.top;
-    const delta = newAbsTop - btnAbsTop;
-    window.scrollTo({top: window.scrollY + delta - 20, behavior: 'instant'});
-  });
-}
 
 </script>
 
