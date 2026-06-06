@@ -492,12 +492,20 @@ function showInlineDiag(btn) {
   if (!diagCard) return;
   const ctaBox = btn.closest('.gp-pain-cta-box');
   if (!ctaBox) return;
+  // ボタン位置（ユーザーが見てる場所）の絶対位置を記録
+  const btnRect = btn.getBoundingClientRect();
+  const btnAbsTop = window.scrollY + btnRect.top;
   // CTAボックスの中身を入れ替えて診断カード設置
   ctaBox.innerHTML = '';
   ctaBox.appendChild(diagCard);
   diagCard.style.display = 'block';
-  // スクロールで該当位置に
-  setTimeout(function() { ctaBox.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 50);
+  // スクロール位置調整：CTAボックスの新しい位置を、元のボタンと同じ画面位置にする
+  requestAnimationFrame(function() {
+    const newRect = ctaBox.getBoundingClientRect();
+    const newAbsTop = window.scrollY + newRect.top;
+    const delta = newAbsTop - btnAbsTop;
+    window.scrollTo({top: window.scrollY + delta - 20, behavior: 'instant'});
+  });
 }
 
 </script>
