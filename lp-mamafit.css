@@ -190,18 +190,6 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
 @keyframes gp-pulse-btn { 0%, 100% { box-shadow: 0 8px 20px rgba(245,0,87,0.35); } 50% { box-shadow: 0 8px 28px rgba(245,0,87,0.55); } }
 .gp-restart { display: block; width: 100%; background: none; border: none; color: var(--text-sub); font-size: 11px; text-decoration: underline; cursor: pointer; margin-top: 8px; padding: 6px; font-family: inherit; }
 
-/* ============ SIMPLE MODE: ランキング直結化 ============ */
-.gp-diag-card, .gp-diag-result { display: none !important; }
-.gp-hero-inner { grid-template-columns: 1fr !important; }
-.gp-hero-text { text-align: center; max-width: 720px; margin: 0 auto; }
-.gp-hero-badges { justify-content: center; }
-.gp-stats { display: none !important; }
-.gp-pain { display: none !important; }
-.gp-steps { display: none !important; }
-.gp-hero { padding: 32px 20px 24px !important; }
-.gp-rank { padding: 32px 20px 56px !important; }
-.gp-hero + .gp-rank .gp-rank-title { font-size: 28px; }
-
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
   .gp-header-inner { padding: 10px 16px; }
