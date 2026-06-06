@@ -202,7 +202,7 @@
     <div class="gp-pain-cta-box">
       <h3>そのお悩み、無料診断で解決できます！</h3>
       <p>5問の質問に答えるだけで、最適なfis店舗を提案します。</p>
-      <a href="#ranking" class="gp-pain-cta-btn">あなたに合うジムを見る →</a>
+      <a href="#" class="gp-pain-cta-btn" onclick="event.preventDefault(); showInlineDiag(this);">無料診断をはじめる →</a>
     </div>
   </div>
 </section>
@@ -438,6 +438,20 @@ document.addEventListener('click', function(e) {
     });
   }
 }, true);
+
+function showInlineDiag(btn) {
+  const diagCard = document.getElementById('diag-card');
+  if (!diagCard) return;
+  const ctaBox = btn.closest('.gp-pain-cta-box');
+  if (!ctaBox) return;
+  // CTAボックスの中身を入れ替えて診断カード設置
+  ctaBox.innerHTML = '';
+  ctaBox.appendChild(diagCard);
+  diagCard.style.display = 'block';
+  // スクロールで該当位置に
+  setTimeout(function() { ctaBox.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 50);
+}
+
 </script>
 
 </body>
