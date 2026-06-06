@@ -475,19 +475,17 @@ function restartDiag() {
   showStep(1);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href*="moshimo.com"], a[href*="a8.net"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-406756934/NoUjCKiV25ocEMa8-sEB',
-          'value': 1.0,
-          'currency': 'JPY'
-        });
-      }
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link || !link.href) return;
+  if (link.href.indexOf('moshimo.com') >= 0 || link.href.indexOf('a8.net') >= 0) {
+    if (typeof gtag !== 'undefined') gtag('event', 'conversion', {
+      'send_to': 'AW-406756934/NoUjCKiV25ocEMa8-sEB',
+      'value': 1.0,
+      'currency': 'JPY'
     });
-  });
-});
+  }
+}, true);
 </script>
 
 </body>
