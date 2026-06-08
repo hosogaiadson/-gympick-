@@ -128,6 +128,20 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
 .gp-rank-btn:hover { transform: translateY(-1px); }
 .gp-rank-detail { display: block; text-align: center; font-size: 12px; color: var(--text-sub); text-decoration: none; padding: 6px; }
 
+/* ============ OTHER (大阪パーソナルジム一覧) ============ */
+.gp-other { padding: 48px 20px; background: #f7f7fa; }
+.gp-other-inner { max-width: 1100px; margin: 0 auto; }
+.gp-other-title { font-size: 22px; font-weight: 900; text-align: center; margin-bottom: 8px; color: var(--text); }
+.gp-other-sub { font-size: 13px; color: var(--text-sub); text-align: center; margin-bottom: 28px; }
+.gp-other-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.gp-other-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.gp-other-card-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; gap: 8px; }
+.gp-other-name { font-size: 15px; font-weight: 900; color: var(--text); }
+.gp-other-area { font-size: 10px; color: var(--text-sub); text-align: right; flex-shrink: 0; font-weight: 700; }
+.gp-other-price { font-size: 12px; color: var(--pink-dark); font-weight: 800; margin-bottom: 6px; }
+.gp-other-desc { font-size: 11px; color: var(--text-sub); line-height: 1.5; }
+.gp-other-note { font-size: 11px; color: var(--text-sub); text-align: center; margin-top: 20px; line-height: 1.6; }
+
 /* ============ VOICES ============ */
 .gp-voices { padding: 56px 20px; background: var(--pink-bg); }
 .gp-voices-inner { max-width: 1100px; margin: 0 auto; }
@@ -209,6 +223,7 @@ body { font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif; color: va
   .gp-steps-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .gp-step-arrow { display: none; }
   .gp-rank-grid { grid-template-columns: 1fr; }
+  .gp-other-grid { grid-template-columns: 1fr; }
   .gp-voices-grid { grid-template-columns: 1fr; }
   .gp-footer-top { grid-template-columns: 1fr; }
   .gp-sticky-bar { display: none; }
