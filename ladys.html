@@ -643,14 +643,42 @@ function showResult() {
   document.getElementById('diag-result').classList.add('active');
   updateProgress(5);
 
-  let rec;
-  if (diagState.budget === 'high' || diagState.purpose === 'wedding') {
-    rec = { name:'ハビット（女性会員）', desc:'梅田駅から通える短期集中プランの候補。女性トレーナー指名などの最新条件は公式サイトで確認してください。', link:'https://px.a8.net/svt/ejp?a8mat=4B3OR1+3C9KZ6+56HC+5YRHE' };
-  } else {
-    rec = { name:'fis.lady\'s（女性専用4店舗）', desc:'女性専用・個室型の比較候補です。店舗・設備・料金の最新条件は公式サイトで確認してください。', link:'https://af.moshimo.com/af/c/click?a_id=5482009&p_id=3563&pc_id=8594&pl_id=50172' };
-  }
+  // このページは「女性専用」を探している人向けなので、比較候補も女性専用に限定する。
+  // エリアは実際の店舗所在と照合する：
+  //   fis.lady's = 天満橋・南森町・江坂・高槻（診断の4択と一致）
+  //   梅田エリアには fis.lady's の店舗が無いため、ビーコンセプト北新地・堂島店（女性専用）を出す
+  var AREA_LABEL = {
+    temmabashi: '天満橋', minamimorimachi: '南森町', esaka: '江坂',
+    takatsuki: '高槻', umeda: '梅田エリア', any: 'エリア問わず'
+  };
+  var PURPOSE_NOTE = {
+    wedding: '挙式までの残り期間から逆算できるか、カウンセリングで相談してみてください。',
+    postpartum: '産後の経過と医師の許可を前提に、どこまで相談できるか確認してください。',
+    diet: '',
+    shape: '',
+    pelvis: '骨盤まわりのケアをどこまで相談できるかは店舗ごとに異なります。',
+    general: ''
+  };
 
-  document.getElementById('result-summary').textContent = '入力した希望条件に近い女性向けジム候補';
+  var rec;
+  if (diagState.area === 'umeda') {
+    rec = {
+      name: 'ビーコンセプト 北新地・堂島店（女性専用）',
+      desc: '梅田エリアから通える女性専用の比較候補です（JR大阪駅 桜橋口から徒歩8分・西梅田駅から徒歩3分）。料金・設備・利用条件は公式サイトで確認してください。',
+      link: 'https://px.a8.net/svt/ejp?a8mat=4B3OR1+3ENBEA+3UK2+5YJRM'
+    };
+  } else {
+    rec = {
+      name: 'fis.lady\'s（女性専用・大阪4店舗）',
+      desc: '女性専用・個室型の比較候補です（天満橋・南森町・江坂・高槻）。店舗・設備・料金の最新条件は公式サイトで確認してください。',
+      link: 'https://af.moshimo.com/af/c/click?a_id=5482009&p_id=3563&pc_id=8594&pl_id=50172'
+    };
+  }
+  var note = PURPOSE_NOTE[diagState.purpose] || '';
+  if (note) rec.desc = rec.desc + ' ' + note;
+
+  var areaLabel = AREA_LABEL[diagState.area] || '入力した条件';
+  document.getElementById('result-summary').textContent = areaLabel + '・女性専用で通える比較候補';
   document.getElementById('result-name').textContent = rec.name;
   document.getElementById('result-desc').textContent = rec.desc;
   document.getElementById('result-link').href = rec.link;
