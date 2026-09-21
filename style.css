@@ -1782,3 +1782,38 @@ body.ladys-page .sticky-cta .cta-btn-sm:hover {
 .lp-link-btn.blue:hover {
   box-shadow: 0 4px 14px rgba(37,99,235,0.35);
 }
+
+/* ===== 読み物セクション（gp-read）2026-09-21 追加 ===== */
+.gp-read { padding: 56px 20px; background: #fff; }
+.gp-read-inner { max-width: 800px; margin: 0 auto; }
+.gp-read-title { font-size: 24px; font-weight: 900; text-align: center; margin-bottom: 10px; color: var(--text); line-height: 1.4; }
+.gp-read-lead { font-size: 14px; color: var(--text-sub); text-align: center; line-height: 1.8; margin-bottom: 36px; }
+.gp-read h3 { font-size: 19px; font-weight: 900; color: var(--text); line-height: 1.5; margin: 40px 0 14px; padding-left: 14px; border-left: 5px solid var(--accent); }
+.gp-read h4 { font-size: 15px; font-weight: 800; color: var(--text); margin: 22px 0 8px; }
+.gp-read p { font-size: 15px; line-height: 1.95; color: #333; margin-bottom: 15px; }
+.gp-read strong { font-weight: 800; color: var(--accent-hover); }
+.gp-read-table { width: 100%; border-collapse: collapse; margin: 18px 0 20px; font-size: 14px; }
+.gp-read-table th, .gp-read-table td { border: 1px solid var(--border); padding: 11px 13px; text-align: left; line-height: 1.7; vertical-align: top; }
+.gp-read-table th { background: var(--accent-light); font-weight: 800; color: var(--text); white-space: nowrap; }
+.gp-read-table td { color: #333; }
+.gp-read-box { background: var(--accent-light); border-radius: 12px; padding: 20px 22px; margin: 20px 0; }
+.gp-read-box h4 { margin-top: 0; }
+.gp-read-box p:last-child { margin-bottom: 0; }
+.gp-read-check { list-style: none; padding: 0; margin: 16px 0; }
+.gp-read-check li { position: relative; padding: 11px 0 11px 32px; font-size: 14.5px; line-height: 1.75; color: #333; border-bottom: 1px dashed var(--border); }
+.gp-read-check li:last-child { border-bottom: none; }
+.gp-read-check li::before { content: "✓"; position: absolute; left: 6px; top: 11px; color: var(--accent); font-weight: 900; font-size: 16px; }
+.gp-read-ng { list-style: none; padding: 0; margin: 16px 0; counter-reset: ngnum; }
+.gp-read-ng li { position: relative; padding: 14px 0 14px 42px; border-bottom: 1px solid var(--border); font-size: 14.5px; line-height: 1.75; color: #333; counter-increment: ngnum; }
+.gp-read-ng li:last-child { border-bottom: none; }
+.gp-read-ng li::before { content: counter(ngnum); position: absolute; left: 0; top: 14px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 900; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+.gp-read-ng b { display: block; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.gp-read-note { font-size: 12px; color: var(--text-sub); line-height: 1.7; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+@media (max-width: 767px) {
+  .gp-read { padding: 40px 16px; }
+  .gp-read-title { font-size: 20px; }
+  .gp-read h3 { font-size: 17px; margin: 32px 0 12px; }
+  .gp-read p { font-size: 14.5px; }
+  .gp-read-table { font-size: 13px; display: block; overflow-x: auto; white-space: nowrap; }
+  .gp-read-table th, .gp-read-table td { padding: 9px 11px; }
+}
