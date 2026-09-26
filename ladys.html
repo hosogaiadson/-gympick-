@@ -645,7 +645,7 @@ function showResult() {
 
   // このページは「女性専用」を探している人向けなので、比較候補も女性専用に限定する。
   // エリアは実際の店舗所在と照合する：
-  //   fis.lady's = 天満橋・南森町・江坂・高槻（診断の4択と一致）
+  //   fis.lady's = 天満橋・南森町・江坂・高槻（店舗は4つ。ただし予約フォームに南森町は無い＝下で注記）
   //   梅田エリアには fis.lady's の店舗が無いため、ビーコンセプト北新地・堂島店（女性専用）を出す
   var AREA_LABEL = {
     temmabashi: '天満橋', minamimorimachi: '南森町', esaka: '江坂',
@@ -673,6 +673,10 @@ function showResult() {
       desc: '女性専用・個室型の比較候補です（天満橋・南森町・江坂・高槻）。店舗・設備・料金の最新条件は公式サイトで確認してください。',
       link: 'https://af.moshimo.com/af/c/click?a_id=5482009&p_id=3563&pc_id=8594&pl_id=50172'
     };
+  }
+  // 2026-09-26実測：fis.lady's 予約フォームの店舗選択肢は 天満橋・江坂・高槻・fis.pilates福島。南森町が無い
+  if (diagState.area === 'minamimorimachi') {
+    rec.desc += ' ※予約フォームの店舗選択肢に南森町店がありません（2026年9月26日時点）。谷町線で隣の天満橋店を選ぶか、予約後の連絡で南森町店を希望と伝えてください。';
   }
   var note = PURPOSE_NOTE[diagState.purpose] || '';
   if (note) rec.desc = rec.desc + ' ' + note;
